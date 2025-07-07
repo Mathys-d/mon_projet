@@ -3,5 +3,6 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    return "Hello World From Laravel v12.x (PHP
+v8.3.6)";
 });
