@@ -11,7 +11,7 @@ class ProductController extends Controller
         return view('product-list',);
     }
 
-    public function indexBis($id)  
+    public function indexDetails($id)  
     {
         return view('product-details', ['id' => $id]);
     }

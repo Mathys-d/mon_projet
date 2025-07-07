@@ -10,6 +10,6 @@ Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/product', [ProductController::class, 'index']);
 
-Route::get('/product/{id}', [ProductController::class, 'indexBis']);
+Route::get('/product/{id}', [ProductController::class, 'indexDetails']);
 
 Route::get('/cart', [CartController::class, 'index']);
