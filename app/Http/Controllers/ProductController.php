@@ -8,11 +8,11 @@ class ProductController extends Controller
 {
    public function index()  
     {
-        return "Panier";
+        return view('product-list',);
     }
 
     public function indexBis($id)  
     {
-        return "Fiche du produit " . $id;
+        return view('product-details', ['id' => $id]);
     }
 }
