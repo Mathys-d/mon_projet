@@ -7,6 +7,8 @@
     <title>Document</title>
 </head>
 <body>
+    @include('partials.header')
+
     <p>id product {{ $id }}</p>
 </body>
 </html>
