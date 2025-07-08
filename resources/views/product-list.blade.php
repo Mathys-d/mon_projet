@@ -1,8 +1,7 @@
+@extends('layouts.template')
 
-    @include('partials.header')
+@section("content")
 
     <p>Liste des produits</p>
 
-    @include('partials.footer')
-</body>
-</html>
+@endsection

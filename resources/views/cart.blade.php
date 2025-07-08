@@ -1,6 +1,7 @@
-@include(view: 'partials.header')
+@extends('layouts.template')
+
+@section("content")
+
     <p>Panier</p>
 
-    @include('partials.footer')
-</body>
-</html>
+@endsection

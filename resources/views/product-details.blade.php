@@ -1,7 +1,7 @@
-@include(view: 'partials.header')
+@extends('layouts.template')
+
+@section("content")
 
     <p>id product {{ $id }}</p>
     
-@include('partials.footer')
-</body>
-</html>
+@endsection
