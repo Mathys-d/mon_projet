@@ -1,0 +1,124 @@
+/*  *{
+    background-color: #E9ECEF;
+}   */
+body {
+    font-family: 'Asap', sans-serif;
+}
+
+.color-orange{
+    background-color: #E3B46A;
+}
+.color-grey{
+    background-color: #E9ECEF;
+}
+/*--photo--*/
+.hero-section {
+    background-image: url('../images/image1.png');
+    background-size: cover;
+    background-position: center;
+    padding: 250px 20px;
+    color: white;
+}
+/*---------*/
+
+
+/*--text--*/
+.tres-petit {
+  font-size: 0.65rem; 
+}
+/*---------*/
+
+
+/*--btn--*/
+.border-remove{
+    border-style: none;
+}
+
+.btn-gris{
+    background-color: #343A40;
+    color: #fff;
+}
+.btn-rad{
+    border-radius: 10px;
+}
+/*---------*/
+
+
+/*-- boxes --*/
+.higher-box{
+    display: flex;
+    flex-wrap: wrap;
+    margin-right:-12 ;
+    margin-left:-12 ;
+    
+}
+.higher-box-plus{
+    flex-wrap: wrap;
+    margin-right:-12 ;
+    margin-left:-12 ;
+}
+.glass-box{
+    padding: 0;
+    width: fit-content;
+}
+
+.box-box{
+    padding: 0;
+    padding-left: 7px;
+    padding-top: 3px;
+    width: 150px;
+    height: 80px;
+}
+
+.box-btn{
+    padding: 0;
+    width: 150px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.svg-1-top{
+    margin-top:-1px;
+}
+.svg-1-bot{
+    margin-bottom: -1px;
+}
+
+/*--------*/
+
+@media screen and (max-width: 700px){
+    .glass-box{
+    padding: 0;
+    width: fit-content;
+}
+
+.box-box{
+    padding: 0;
+    padding-left: 2px;
+    padding-top: 3px;
+    width: 150px;
+    height: 80px;
+}
+
+.box-btn{
+    padding: 0;
+    width: 150px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.hero-section {
+    background-image: url('../images/image1.png');
+    background-size: cover;
+    background-position: center;
+    padding: 100px 20px;
+    color: white;
+}
+}
+
