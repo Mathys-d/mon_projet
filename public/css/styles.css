@@ -19,13 +19,27 @@ body {
     padding: 250px 20px;
     color: white;
 }
+.rotate{
+  transform: rotate(180deg);
+}
+
 /*---------*/
 
 
 /*--text--*/
 .tres-petit {
-  font-size: 0.65rem; 
+  font-size: 8px; 
 }
+.titre-tres-petit {
+  font-size: 10px; 
+}
+.marg-t{
+    margin-top: 6px;
+}
+.marg-l{
+    margin-left: 10px;
+}
+
 /*---------*/
 
 
@@ -37,14 +51,41 @@ body {
 .btn-gris{
     background-color: #343A40;
     color: #fff;
+    border: 2px solid #343A40;
+    transition: all 0.3s ease;
+}
+.btn-gris:hover {
+    background-color: transparent;
+    color: #343A40;
+    border: 2px solid #343A40;
 }
 .btn-rad{
-    border-radius: 10px;
+    border-radius: 15px;
+}
+.elemnt-panier{
+    margin: auto;
+    width: 320px;
+}
+.btn-panier{
+    margin: auto;
+    width: 320px;
+    padding-left: 134;
 }
 /*---------*/
 
 
 /*-- boxes --*/
+.marge-negative {
+    margin-top: -0.25rem;  /* équivalent à -4px (mt-1) */
+    margin-bottom: -0.25rem;
+}
+
+.div-div{
+    width: 115px;
+}
+.box-detail-product{
+    width: 160px;
+}
 .higher-box{
     display: flex;
     flex-wrap: wrap;
@@ -77,9 +118,29 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-
+}
+.box-btn-alt {
+    position: relative;
+    width: 250px;
+    height: 40px; 
+    padding: 0;
 }
 
+.box-btn-alt button {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 5px;
+    margin-right: 10px;
+    border-radius: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+}
+.box-btn-gelar {
+    padding-left: 101px;
+    padding-right: 101px;
+}
 .svg-1-top{
     margin-top:-1px;
 }
@@ -87,7 +148,94 @@ body {
     margin-bottom: -1px;
 }
 
+.marg-l-glass{
+    margin-left: 35px;
+}
 /*--------*/
+
+.custom-line {
+    width: 320px;
+    margin: 20px auto;
+    border-radius: 20px;
+    color: #343A40;
+}
+.custom-line {
+    width: auto;
+    margin: 30px auto;
+    border-radius: 20px;
+    color: #343A40;
+}
+
+
+/* caroussel */
+.carousel{
+    width: 340px;
+    margin: auto;
+}
+/* Centrer les flèches verticalement */
+.carousel-control-prev i,
+.carousel-control-next i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Position des flèches */
+.carousel-control-prev i {
+    left: -10px;
+}
+
+.carousel-control-next i {
+    right: -10px;
+}
+
+/* Supprimer le fond par défaut des boutons */
+.carousel-control-prev,
+.carousel-control-next {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+/* --------- */
+
+
+
+
+/* custom */
+.toggle-box {
+    display: none;
+    margin-top: 10px;
+}
+
+.trigger-div {
+    padding: 10px 15px;
+    border-radius: 5px;
+   width: fit-content;
+   cursor: pointer;
+}
+
+select {
+    padding: 8px;
+   font-size: 14px;
+}
+
+.color-option {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid #fff;
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    transition: transform 0.2s ease;
+}
+
+.color-option:hover {
+    transform: scale(1.1);
+}
+
+/* --------- */
+
 
 @media screen and (max-width: 700px){
     .glass-box{
@@ -120,5 +268,33 @@ body {
     padding: 100px 20px;
     color: white;
 }
+
+     .carousel img {
+        width: 320px !important;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .custom-arrow i {
+        font-size: 1.5rem !important;
+    }
+
+
+    .text-mobile-small {
+        font-size: 12px !important;
+        text-align: center;
+    }
+  .text-mobile-small {
+        font-size: 12px !important;
+        text-align: center;
+    }
+
+
+
 }
+  
+
+
 

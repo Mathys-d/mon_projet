@@ -4,15 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MIRO MIRO</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Asap:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 </head>
 <body>
     <nav class="navbar navbar-expand-lg color-orange">
         <div class="container-fluid color-orange">
-            <a class="navbar-brand color-orange" href="#">
+            <a class="navbar-brand color-orange" href="/">
                 <img src="{{ asset('images/logoNoir.png') }}" alt="logoNoir" height="40">
             </a>
             <button class="navbar-toggler border-remove" type="button" data-bs-toggle="collapse" data-bs-target="#menuBurger" aria-controls="menuBurger" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,7 +30,7 @@
                         <a class="nav-link text-dark" href="/product">Explorer</a>
                     </li>
                     <li class="nav-item color-orange">
-                        <a class="nav-link text-dark" href="/product/{id}">Personnaliser</a>
+                        <a class="nav-link text-dark" href="/custom">Personnaliser</a>
                     </li>
                     <li class="nav-item color-orange">
                         <a class="nav-link text-dark" href="#">Compte</a>
@@ -40,3 +42,4 @@
             </div>
         </div>
     </nav>
+    

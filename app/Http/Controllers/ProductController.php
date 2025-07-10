@@ -3,16 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Lunette;
 
 class ProductController extends Controller
 {
-   public function index()  
-    {
-        return view('product-list',);
-    }
+public function index()  
+{
+    $lunettes = Lunette::all(); 
+    return view('product-list', compact('lunettes'));
+}
 
-    public function indexDetails($id)  
+    public function indexDetails($id)
     {
-        return view('product-details', ['id' => $id]);
+        $lunette = Lunette::findOrFail($id); 
+        return view('product-details', compact('lunette'));
     }
 }

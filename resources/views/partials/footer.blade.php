@@ -1,3 +1,5 @@
+<img src="{{ asset('images/bot_wave.svg') }}" class="img-fluid w-100 rotate marge-negative" alt="bottom wave">
+
      <div class="fs-5 color-orange px-4">
         <img src="{{ asset(path: 'images/logoBlanc.png') }}" height="80" alt="lunette " class="rounded d-block mx-auto">
         <a href="/" class="tres-petit d-block text-decoration-none text-dark text-center mb-2">Accueil</a>
@@ -10,7 +12,6 @@
         <p class="tres-petit text-center">Conformité</p>
         <p class="tres-petit text-center mb-0">Politique de Confidentialité</p>
     </div>
-
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
