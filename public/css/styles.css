@@ -11,11 +11,18 @@ body {
 .color-grey{
     background-color: #E9ECEF;
 }
+.color-gris{
+    background-color: #343A40;
+}
+.color-pay{
+    background-color: #D9D9D9;
+}
+
 /*--photo--*/
 .hero-section {
     background-image: url('../images/image1.png');
     background-size: cover;
-    background-position: center;
+    background-position-y: center;
     padding: 250px 20px;
     color: white;
 }
