@@ -43,3 +43,8 @@
         </div>
     </nav>
     
+@if (!Request::is('/'))
+    <div class="mt-2 ms-2">
+        <button type="button" onclick="window.location.href='/product'" class="btn btn-gris titre-tres-petit font-weight-bold">Back</button>
+    </div>
+@endif

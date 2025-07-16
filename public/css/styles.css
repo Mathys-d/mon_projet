@@ -82,6 +82,10 @@ body {
 
 
 /*-- boxes --*/
+.cart-items{
+    max-height: 50px;
+    min-width: 50px;
+}
 .marge-negative {
     margin-top: -0.25rem;  /* équivalent à -4px (mt-1) */
     margin-bottom: -0.25rem;
@@ -242,6 +246,22 @@ select {
 }
 
 /* --------- */
+
+
+
+
+/* filter */
+
+#itemList {
+  margin-top: 1rem;
+}
+.item {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+/* --------- */
+
+
 
 
 @media screen and (max-width: 700px){

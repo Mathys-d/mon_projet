@@ -45,4 +45,8 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function lunettes(){
+        return $this->belongsToMany(Lunette::class, 'cart_items')->withPivot('quantity','id', 'quantity', 'created_at', 'updated_at')->withTimestamps();
+    }
 }

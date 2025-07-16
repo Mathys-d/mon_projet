@@ -29,7 +29,7 @@
             <div class="col-3 mt-4 mx-auto text-center color-orange glass-box rounded" >
                 <div class="higher-box">
                     <div class=" col-3 col-sm-3 glass-box">
-                    <img src="{{ asset(path: 'images/lunette.png') }}" height="80" alt="lunette " class="rounded">
+                    <img src="{{ asset('images/lunette.png') }}" height="80" alt="lunette " class="rounded">
                     </div>
                     <div class="col-3 col-sm-3 text-start box-box">
                         <div >

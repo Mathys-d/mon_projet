@@ -2,9 +2,7 @@
 
 @section("content")
 
-<div class="mt-2 ms-2">
-    <button type="button" onclick="window.location.href='/product'" class="btn btn-gris titre-tres-petit font-weight-bold">Back</button>
-</div>
+
 
 <div class="container px-0 my-5 ">
 <div class="mt-5">
@@ -45,8 +43,11 @@
                 </div>
             </div>
             <div class="text-center mt-0" >
-                
-                <button type="button" class="btn btn-gris mb-4 btn-panier" onclick="window.location.href='/cart'">PANIER</button>
+                <form action="{{ route('cart.add') }}" method="POST" class="text-center mt-0 mb-4">
+                    @csrf
+                    <input type="hidden" name="lunette_id" value="{{ $lunette->id }}">
+                    <button type="submit" class="btn btn-gris btn-panier">PANIER</button>
+                </form>
             </div>
         </div>
 

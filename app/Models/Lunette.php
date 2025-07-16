@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Lunette extends Model
 {
-    protected $table = 'lunette'; 
-    public $timestamps = false;
+        public $timestamps = false;
+
+        public function users(){
+                return $this->belongsToMany(User::class,'cart_items')->withPivot('quantity');
+        }
 }

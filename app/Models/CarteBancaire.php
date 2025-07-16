@@ -9,7 +9,7 @@ class CarteBancaire extends Model
 {
     use HasFactory;
 
-    protected $table = 'cartes_bancaires'; // Nom exact de la table (important si elle ne suit pas la convention Laravel)
+    protected $table = 'cartes_bancaires'; 
 
     protected $fillable = [
         'numero_carte',
