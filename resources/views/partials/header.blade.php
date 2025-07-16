@@ -35,9 +35,13 @@
                     <li class="nav-item color-orange">
                         <a class="nav-link text-dark" href="#">Compte</a>
                     </li>
-                    <li class="nav-item color-orange">
-                        <a class="nav-link text-dark" href="#">Contact</a>
+                    <li class="nav-item d-flex align-items-center justify-content-between w-100">
+                    <a class="nav-link text-dark" href="#">Contact</a>
+                    <button type="button" onclick="window.location.href='/cart'" class="color-orange border-0 bg-transparent p-0">
+                        <i class="fa-solid fa-basket-shopping color-orange" style="color: #212529;"></i>
+                    </button>
                     </li>
+
                 </ul>
             </div>
         </div>

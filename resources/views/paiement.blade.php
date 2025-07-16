@@ -34,10 +34,61 @@
                     <input type="text" class="form-control color-pay rounded-0 w-50" name="code_securite" id="cvv" placeholder="123" required>
                 </div>
 
-                <button type="submit" class="btn btn-gris w-100">CONTINUER</button>
+                <button class="btn btn-gris w-100" onclick="toggleNextCard(event)">CONTINUER</button>
+                
+                
+                <div class=" p-2" id="toggleNextCard">
+                    <p>Choisissez votre mode de livraison</p>
+
+                    <div class="">
+                        <label class="border ">
+                            <img src="{{ asset(path: 'images/simpleDelivery.png') }}" height="80" alt="simpleDelivery " class="">
+                            <p>Livraison Simple</p>
+                            <p>Optes pour une livraison simple</p>
+                            <input type="checkbox" name="paiement" value="cb" onclick="selectOnlyOne(this)"> 
+                        </label>
+
+                        <label class="border">
+                            <img src="{{ asset(path: 'images/expressDelivery.png') }}" height="80" alt="expressDelivery" class="">
+                            <p>Livraison Express</p>
+                            <p>Optes pour une livraison plus rapide</p>
+                            <input type="checkbox" name="paiement" value="paypal" onclick="selectOnlyOne(this)">
+                        </label>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
 </form>
+
+
+<script>
+function toggleNextCard(event) {
+  event.preventDefault();
+
+  const numeroCarte = document.getElementById("card_number").value.trim();
+  const nomTitulaire = document.getElementById("card_name").value.trim();
+  const expiration = document.getElementById("expiration").value.trim();
+  const cvv = document.getElementById("cvv").value.trim();
+
+  if (!numeroCarte || !nomTitulaire || !expiration || !cvv) {
+    alert("Veuillez remplir tous les champs de paiement.");
+    return;
+  }
+
+
+  const box = document.getElementById("toggleNextCard");
+  box.style.display = box.style.display === "block" ? "none" : "block";
+}
+
+function selectOnlyOne(checkbox) {
+  const checkboxes = document.getElementsByName('paiement');
+  checkboxes.forEach((cb) => {
+    if (cb !== checkbox) cb.checked = false;
+  });
+}
+</script>
+
 
 @endsection
