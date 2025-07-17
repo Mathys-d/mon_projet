@@ -21,6 +21,10 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'billing_street',
+        'billing_number',
+        'billing_postal_code',
+        'billing_city',
     ];
 
     /**
@@ -47,6 +51,6 @@ class User extends Authenticatable
     }
 
     public function lunettes(){
-        return $this->belongsToMany(Lunette::class, 'cart_items')->withPivot('quantity','id', 'quantity', 'created_at', 'updated_at')->withTimestamps();
+        return $this->belongsToMany(Lunette::class, 'cart_items')->withPivot('quantity','id', 'quantity', 'created_at', 'updated_at','',)->withTimestamps();
     }
 }

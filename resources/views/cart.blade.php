@@ -21,9 +21,9 @@
 
 
                 <div class="flex-grow-1 d-flex justify-content-between">
-                    <p class="m-0 cart-items">{{ $item->name }}</p>
-                    <p class="m-0 cart-items">{{ $item->prix }} €</p> 
-                    <p class="m-0 cart-items">Qty : {{ $item->quantity }}</p> 
+                    <p class="m-0 cart-items titre-moyen">{{ $item->name }}</p>
+                    <p class="m-0 cart-items titre-moyen">{{ $item->prix }} €</p> 
+                    <p class="m-0 cart-items titre-moyen">Qty : {{ $item->quantity }}</p> 
                 </div>
 
 

@@ -36,10 +36,7 @@
                         <a class="nav-link text-dark" href="#">Compte</a>
                     </li>
                     <li class="nav-item d-flex align-items-center justify-content-between w-100">
-                    <a class="nav-link text-dark" href="#">Contact</a>
-                    <button type="button" onclick="window.location.href='/cart'" class="color-orange border-0 bg-transparent p-0">
-                        <i class="fa-solid fa-basket-shopping color-orange" style="color: #212529;"></i>
-                    </button>
+                    <a class="nav-link text-dark" href="/contact">Contact</a>
                     </li>
 
                 </ul>
@@ -48,7 +45,17 @@
     </nav>
     
 @if (!Request::is('/'))
-    <div class="mt-2 ms-2">
-        <button type="button" onclick="window.location.href='/product'" class="btn btn-gris titre-tres-petit font-weight-bold">Back</button>
-    </div>
+<div class="mt-2 mx-2 d-flex justify-content-between align-items-center">
+
+    <button type="button" onclick="window.location.href='/product'" class="btn btn-gris titre-tres-petit fw-bold">
+        Back
+    </button>
+
+
+    <button type="button" onclick="window.location.href='/cart'" class="border-0 bg-transparent p-0">
+        <i class="fa-solid fa-basket-shopping" style="color: #212529;"></i>
+    </button>
+</div>
+
 @endif
+

@@ -6,6 +6,7 @@ use App\Http\Controllers\PaiementController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ContactController;
 
 
 
@@ -26,3 +27,6 @@ Route::post('/cart/remove/{id}', [CartController::class, 'remove'])->name('cart.
 
 Route::get('/paiement', [PaiementController::class, 'index'])->name('paiement');
 Route::post('/paiement', [PaiementController::class, 'submit'])->name('paiement.submit');
+
+Route::get('/contact', [ContactController::class, 'show'])->name('contact.show');
+Route::post('/contact', [ContactController::class, 'submit'])->name('contact.submit');
