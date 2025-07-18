@@ -12,7 +12,7 @@
     </div>
     
     <div class="container mb-5">
-        <form action="{{ route('logout') }}" method="POST">
+        <form action="{{route ('logout') }}" method="POST">
             @csrf
             <button type="submit" class="btn btn-danger">Se déconnecter</button>
         </form>

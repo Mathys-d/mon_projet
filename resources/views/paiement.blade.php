@@ -71,7 +71,7 @@
                 </div>
             </div>
 
-            <div class="" id="toggleNextCard">
+            <div class="hidden" id="toggleNextCard">
                 <hr class="custom-line-payment mb-4">
 
                 <p class="text-center">Facture</p>
