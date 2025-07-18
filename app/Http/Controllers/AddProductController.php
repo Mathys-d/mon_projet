@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
 use Illuminate\Http\Request;
+use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
-class CartController extends Controller
+class AddProductController extends Controller
 {
 public function index()
 {
@@ -37,8 +37,7 @@ public function add(Request $request)
             'lunette_id' => 'required|exists:lunettes,id',
         ]);
 
-        $user = Auth::user();
- 
+        $user = User::find(1); 
 
         $existingItem = DB::table('cart_items')
             ->where('user_id', $user->id)
@@ -84,5 +83,4 @@ public function updateQuantity(Request $request, $id)
 
     return redirect()->route('cart')->with('success', 'Quantité mise à jour.');
 }
-
 }

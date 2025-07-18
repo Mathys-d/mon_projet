@@ -11,6 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
+        if (!Schema::hasTable('cart_items')) {
         Schema::create('cart_items', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('lunette_id');
@@ -21,7 +22,7 @@ return new class extends Migration
             $table->foreign('lunette_id')->references('id')->on('lunettes')->onDelete('cascade');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('set null');
         });
-
+}
     }
 
     /**

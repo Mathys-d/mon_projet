@@ -24,7 +24,7 @@
                     <input type="text" class="form-control color-pay rounded-0 d-flex align-items-end" name="expiration" id="expiration" placeholder="MM/AA" required>
                 </div>
                 <div class="col-6 mb-3">
-                    <label for="cvv" class="form-label">Code de sécurité (CVV)</label>
+                    <label for="cvv" class="form-label">Code de sécurité</label>
                     <input type="text" class="form-control color-pay rounded-0" name="code_securite" id="cvv" placeholder="123" required>
                 </div>
                 </div>
@@ -54,15 +54,16 @@
                                 <div class="d-flex align-items-center justify-content-start" style="height: 137px;">
                                     <img src="{{ asset('images/expressDelivery.png') }}" height="50" alt="expressDelivery">
 
-                                </div>
+                                </div >
                                 <div class="flex-grow-1">
                                     <p class="fs-6 mb-1">Livraison Express</p>
                                     <p class="tres-petit mb-2">Optez pour une livraison plus rapide</p>
                                 </div>
                                 <input type="checkbox" name="paiement" value="paypal" onclick="selectOnlyOne(this)" class="ms-auto me-3">
                             </label>
+
                         </div>
-                        <div class="text-center">
+                        <div class="text-center mt-4">
                         <button type="button" class="btn btn-gris px-4" onclick="(event)">CONTINUER</button>
                         </div>
 
@@ -70,7 +71,7 @@
                 </div>
             </div>
 
-            <div class="hidden" id="toggleNextCard">
+            <div class="" id="toggleNextCard">
                 <hr class="custom-line-payment mb-4">
 
                 <p class="text-center">Facture</p>

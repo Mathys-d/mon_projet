@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use App\Models\CarteBancaire;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -12,7 +13,8 @@ class PaiementController extends Controller
 {
     public function index()
     {
-    $user = DB::table('users')->where('id', 1)->first();
+    $user = Auth::user();
+
 
 
     $cartItems = DB::table('cart_items')

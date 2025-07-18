@@ -33,7 +33,7 @@
                         <a class="nav-link text-dark" href="/custom">Personnaliser</a>
                     </li>
                     <li class="nav-item color-orange">
-                        <a class="nav-link text-dark" href="#">Compte</a>
+                        <a class="nav-link text-dark" href="/account">Compte</a>
                     </li>
                     <li class="nav-item d-flex align-items-center justify-content-between w-100">
                     <a class="nav-link text-dark" href="/contact">Contact</a>
@@ -50,8 +50,20 @@
     <button type="button" onclick="window.location.href='/product'" class="btn btn-gris titre-tres-petit fw-bold">
         Back
     </button>
+@endif
 
-
+    <div class="text-center">
+        @auth
+            <a href="{{ route('account') }}">
+                <i class="fa-solid fa-user" style="color: #212529;"></i>
+            </a>
+        @else
+            <a href="{{ route('login') }}">
+                <i class="fa-solid fa-right-to-bracket" style="color: #212529;"></i>
+            </a>
+        @endauth
+    </div>
+@if (!Request::is('/'))
     <button type="button" onclick="window.location.href='/cart'" class="border-0 bg-transparent p-0">
         <i class="fa-solid fa-basket-shopping" style="color: #212529;"></i>
     </button>
