@@ -35,6 +35,9 @@
                     <li class="nav-item color-orange">
                         <a class="nav-link text-dark" href="/account">Compte</a>
                     </li>
+                    <li class="nav-item color-orange">
+                        <a class="nav-link text-dark" href="/account">Connexion</a>
+                    </li>
                     <li class="nav-item d-flex align-items-center justify-content-between w-100">
                     <a class="nav-link text-dark" href="/contact">Contact</a>
                     </li>
