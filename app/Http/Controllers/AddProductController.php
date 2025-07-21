@@ -3,84 +3,71 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\User;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Auth;
+use App\Models\Lunette; 
 
 class AddProductController extends Controller
 {
-public function index()
-{
-    $user = Auth::user();
-
-    $cartItems = DB::table('cart_items')
-        ->join('lunettes', 'cart_items.lunette_id', '=', 'lunettes.id')
-        ->where('cart_items.user_id', $user->id)
-        ->select(
-            'cart_items.id as cart_id',
-            'cart_items.quantity',
-            'lunettes.name',
-            'lunettes.prix',
-            'lunettes.img'
-        )
-        ->get();
-
-    $total = $cartItems->sum(fn($item) => $item->prix * $item->quantity);
-
-    return view('cart', compact('cartItems', 'total'));
-}
-
-
-public function add(Request $request)
-{
-        $request->validate([
-            'lunette_id' => 'required|exists:lunettes,id',
-        ]);
-
-        $user = User::find(1); 
-
-        $existingItem = DB::table('cart_items')
-            ->where('user_id', $user->id)
-            ->where('lunette_id', $request->lunette_id)
-            ->first();
-
-        if ($existingItem) {
-            DB::table('cart_items')
-                ->where('id', $existingItem->id)
-                ->update([
-                    'quantity' => $existingItem->quantity + 1,
-                    'updated_at' => now(),
-                ]);
-        } else {
-            DB::table('cart_items')->insert([
-                'user_id' => $user->id,
-                'lunette_id' => $request->lunette_id,
-                'quantity' => 1,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ]);
-        }
-
-        return redirect()->route('cart')->with('success', 'Produit ajouté au panier !');
+    public function index()
+    {
+        $lunettes = Lunette::all();
+        return view('add-product', compact('lunettes'));
     }
-public function remove($id)
-{
-    DB::table('cart_items')->where('id', $id)->delete();
 
-    return redirect()->route('cart')->with('success', 'Produit supprimé du panier.');
-}
-
-public function updateQuantity(Request $request, $id)
+    public function updateQuantity(Request $request, $id)
 {
     $request->validate([
-        'quantity' => 'required|integer|min:1',
+        'stock' => 'required|integer|min:0',
+        'prix' => 'required|numeric|min:0',
+        'name' => 'required|string|max:100',
     ]);
 
-    DB::table('cart_items')->where('id', $id)->update([
-        'quantity' => $request->quantity,
-        'updated_at' => now(),
-    ]);
+    $lunette = Lunette::findOrFail($id);
+    $lunette->stock = $request->input('stock');
+    $lunette->prix = $request->input('prix');
+    $lunette->name = $request->input('name');
+    $lunette->save(); 
 
-    return redirect()->route('cart')->with('success', 'Quantité mise à jour.');
+    return redirect()->back()->with('success', 'Stock mis à jour avec succès.');
 }
+
+
+    public function remove($id)
+    {
+        $lunette = Lunette::findOrFail($id); 
+        $lunette->delete();
+
+        return redirect()->back()->with('success', 'Lunette supprimée avec succès.');
+    }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|string|max:100',
+            'prix' => 'required|numeric|min:0',
+            'img' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
+            'genre' => 'nullable|string|max:50',
+            'taille' => 'nullable|string|max:50',
+            'type' => 'nullable|string|max:50',
+            'forme' => 'nullable|string|max:50',
+            'stock' => 'required|integer|min:0',
+        ]);
+
+        $imagePath = null;
+        if ($request->hasFile('img')) {
+            $imagePath = $request->file('img')->store('lunettes', 'public');
+        }
+
+        Lunette::create([ 
+            'name' => $request->input('name'),
+            'prix' => $request->input('prix'),
+            'img' => $imagePath ?? 'default.jpg',
+            'genre' => $request->input ('genre'),
+            'taille' => $request->input ('taille'),
+            'type' => $request->input ('type,'),
+            'forme' => $request->input ('forme'),
+            'stock' => $request->input ('stock'),
+        ]);
+
+        return redirect()->back()->with('success', 'Lunette ajoutée avec succès.');
+    }
 }

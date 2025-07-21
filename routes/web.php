@@ -11,6 +11,8 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AccountController;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\AddProductController
+;
 
 Route::middleware(['auth'])->group(function () {
 
@@ -22,6 +24,10 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/cart/update/{id}', [CartController::class, 'updateQuantity'])->name('cart.update');
     Route::post('/cart/remove/{id}', [CartController::class, 'remove'])->name('cart.remove');
 
+    Route::get('/add-product', [AddProductController::class, 'index'])->name('add-product');
+    Route::post('/add-product', [AddProductController::class, 'store'])->name('add-product.store');
+    Route::post('/add-product/update/{id}', [AddProductController::class, 'updateQuantity'])->name('add-product.update');
+    Route::delete('/add-product/remove/{id}', [AddProductController::class, 'remove'])->name('add-product.remove');
 
     Route::get('/paiement', [PaiementController::class, 'index'])->name('paiement');
     Route::post('/paiement', [PaiementController::class, 'submit'])->name('paiement.submit');
