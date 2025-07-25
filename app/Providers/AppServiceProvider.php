@@ -22,7 +22,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        if (Schema::hasTable('lunettes')) {
         $lunette = Lunette::all();
-        View::share('lunetteGlobales', $lunette);
+        View::share('lunetteGlobales', value: $lunette);
+        }
     }
 }
